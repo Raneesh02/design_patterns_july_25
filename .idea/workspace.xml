@@ -32,6 +32,7 @@
   <component name="ProjectId" id="2gjsE0K5ooiosKT0xgUJ0XrKnsA" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="2" id="Remove" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -57,25 +58,7 @@
   }
 }</component>
   <component name="RunManager" selected="TestNG./Users/raneeshchoudhary/Downloads/SkiptheDishes Coding Challenge/Selenium4_POM_Basic/src/test/java/suites/alltests.xml">
-    <configuration name="AppTest.test" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Selenium4_POM_Basic" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.AppTest" />
-      <option name="METHOD_NAME" value="test" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RegistrationTests.testWorking" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="FilterTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Selenium4_POM_Basic" />
       <extension name="coverage">
         <pattern>
@@ -84,8 +67,61 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.RegistrationTests" />
-      <option name="METHOD_NAME" value="testWorking" />
+      <option name="MAIN_CLASS_NAME" value="tests.FilterTests" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FilterTests.testFilterCategoryResults" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Selenium4_POM_Basic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.FilterTests" />
+      <option name="METHOD_NAME" value="testFilterCategoryResults" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FilterTests.testNoFilterResults" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Selenium4_POM_Basic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.FilterTests" />
+      <option name="METHOD_NAME" value="testNoFilterResults" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FilterTests.testSortNames" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Selenium4_POM_Basic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.FilterTests" />
+      <option name="METHOD_NAME" value="testSortNames" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -106,8 +142,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG./Users/raneeshchoudhary/Downloads/SkiptheDishes Coding Challenge/Selenium4_POM_Basic/src/test/java/suites/alltests.xml" />
-        <item itemvalue="TestNG.RegistrationTests.testWorking" />
-        <item itemvalue="TestNG.AppTest.test" />
+        <item itemvalue="TestNG.FilterTests.testNoFilterResults" />
+        <item itemvalue="TestNG.FilterTests.testFilterCategoryResults" />
+        <item itemvalue="TestNG.FilterTests" />
+        <item itemvalue="TestNG.FilterTests.testSortNames" />
       </list>
     </recent_temporary>
   </component>
@@ -121,17 +159,6 @@
       <updated>1716222205496</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/tests/RegistrationTests.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -20,7 +20,9 @@ public class Homepage extends BasePage {
     By categoriesDdnOtpCss=By.cssSelector("[class*='dropdown-menu'][aria-label='nav-categories'] li");
     By brandLogoCss=By.cssSelector("[class='navbar-brand']");
     By footerCss=By.cssSelector("app-footer");
-
+    By productNameCss=By.cssSelector("[data-test='product-name']");
+    By productPriceCss=By.cssSelector("[data-test='product-price']");
+    By noResultsCss=By.cssSelector("[data-test='no-results']");
 
 
     public Homepage(WebDriver driver) {
@@ -48,6 +50,26 @@ public class Homepage extends BasePage {
 
     public String getFooterText(){
         return getText(footerCss);
+    }
+
+    public FilterSideBar getFilterBar(){
+        return new FilterSideBar(driver);
+    }
+
+    public List<String> getProductNameList(){
+        waitForVisible(productNameCss);
+        List<WebElement> elements = driver.findElements(productNameCss);
+        return elements.stream().map(e -> e.getText()).collect(Collectors.toList());
+    }
+
+    public List<String> getProductPriceList(){
+        waitForVisible(productPriceCss);
+        List<WebElement> elements = driver.findElements(productPriceCss);
+        return elements.stream().map(e -> e.getText()).collect(Collectors.toList());
+    }
+
+    public boolean noResultsPresent(){
+        return isDisplayed(noResultsCss);
     }
 
 }
