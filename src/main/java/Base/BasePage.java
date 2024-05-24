@@ -32,8 +32,7 @@ public class BasePage {
     protected boolean isDisplayed(By locator){
         try {
             return webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(locator)).isDisplayed();
-        }catch (TimeoutException e){
-            System.out.println("Cannot find element with location: "+locator);
+        }catch (TimeoutException ignored){
         }
         System.out.println("element with locator : "+locator+" is not displayed");
         return false;
