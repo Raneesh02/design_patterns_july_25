@@ -7,20 +7,29 @@ import utilities.PropertyHandler;
 
 public class BaseTest {
     protected  DriverManager driverManager;
-    protected WebDriver driver;
     protected String url;
+    private static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<WebDriver>();
 
     @BeforeMethod
     public void init(){
         driverManager = new DriverManager();
-        driver = driverManager.initDriver();
+        tlDriver.set(driverManager.initDriver());
+                System.out.println("Driver init : " + Thread.currentThread().getId()
+                + " on driver reference : " + tlDriver.get());
         url = PropertyHandler.getProperty("url");
-        driver.get(url);
+        tlDriver.get().get(url);
+    }
+
+    public WebDriver getDriver(){
+        return tlDriver.get();
     }
 
     @AfterMethod
     public void tearDown(){
-        driverManager.quitDriver();
+        System.out.println("Browser closed by Thread : " + Thread.currentThread().getId()
+                + " and Closing driver reference is :" + getDriver());
+        tlDriver.get().close();
+        tlDriver.remove();
     }
 
 }

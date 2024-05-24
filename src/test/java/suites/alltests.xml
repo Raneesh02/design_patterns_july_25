@@ -8,6 +8,7 @@
 <!--        </packages>-->
 <!--    </test>-->
     <test name="AllTest" parallel="methods">
+<!--    <test name="AllTest" >-->
         <classes>
             <class name="tests.HomePageTests"></class>
         </classes>

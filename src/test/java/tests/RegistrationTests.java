@@ -9,7 +9,7 @@ public class RegistrationTests extends BaseTest {
 
     @Test
     public void testError(){
-        RegistrationPage registrationPage = new RegistrationPage(driver);
+        RegistrationPage registrationPage = new RegistrationPage(getDriver());
         registrationPage.navigateByUrl();
         registrationPage.enterFirstName("Itachi");
         registrationPage.enterLastName("Uchiha");
@@ -19,7 +19,7 @@ public class RegistrationTests extends BaseTest {
 
     @Test
     public void testCountryDropdown(){
-        RegistrationPage registrationPage = new RegistrationPage(driver);
+        RegistrationPage registrationPage = new RegistrationPage(getDriver());
         registrationPage.navigateByUrl();
         Assert.assertEquals(registrationPage.getSelectedCountry(),"Your country *");
         registrationPage.selectCountry("India");
@@ -28,7 +28,7 @@ public class RegistrationTests extends BaseTest {
 
     @Test
     public void testPhoneValidations(){
-        RegistrationPage registrationPage = new RegistrationPage(driver);
+        RegistrationPage registrationPage = new RegistrationPage(getDriver());
         registrationPage.navigateByUrl();
         registrationPage.enterPhone("hello123");
         registrationPage.submitForm();
