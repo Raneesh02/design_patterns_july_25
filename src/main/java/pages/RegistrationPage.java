@@ -11,6 +11,9 @@ public class RegistrationPage extends BasePage {
     By lastNameCss=By.cssSelector("input[data-test='last-name']");
     By dobErrorCss=By.cssSelector("[data-test='dob-error']");
     By registerBtnCss=By.cssSelector("button[data-test='register-submit']");
+    By countryDDwnCss=By.cssSelector("select[data-test='country']");
+    By phoneErrorCss=By.cssSelector("[data-test='phone-error']");
+    By phoneTxtCss=By.cssSelector("input[data-test='phone']");
 
 
 
@@ -18,9 +21,8 @@ public class RegistrationPage extends BasePage {
         super(driver);
     }
 
-    public RegistrationPage navigateByUrl(){
+    public void navigateByUrl(){
         this.driver.get(this.url+navigationUrl);
-        return this;
     }
 
 
@@ -38,5 +40,19 @@ public class RegistrationPage extends BasePage {
 
     public boolean isDobErrorDisplayed(){
         return isDisplayed(dobErrorCss);
+    }
+    public void selectCountry(String country){
+        waitAndSelect(countryDDwnCss, country);
+    }
+
+    public String getSelectedCountry(){
+        return getSelectedOption(countryDDwnCss);
+    }
+    public String getPhoneError(){
+        return getText(phoneErrorCss);
+    }
+    public boolean isPhoneErrorPresent(){ return isDisplayed(phoneErrorCss);}
+    public void enterPhone(String phone){
+        waitAndSendKeys(phoneTxtCss,phone);
     }
 }

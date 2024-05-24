@@ -5,6 +5,7 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.PropertyHandler;
 
@@ -18,7 +19,7 @@ public class BasePage {
     public BasePage(WebDriver driver){
         this.driver = driver;
         url = PropertyHandler.getProperty("url");
-        webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     protected void waitAndClick(By locator){
@@ -41,6 +42,7 @@ public class BasePage {
     protected void waitAndSendKeys(By locator,String keysToSend){
         WebElement element=waitForVisible(locator);
         webDriverWait.until(ExpectedConditions.elementToBeClickable(element));
+        element.clear();
         element.sendKeys(keysToSend);
     }
 
@@ -52,6 +54,21 @@ public class BasePage {
     protected String getText(By locator){
         waitForVisible(locator);
         return driver.findElement(locator).getText();
+    }
+
+    protected String getSelectedOption(By locator){
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        WebElement element=driver.findElement(locator);
+        Select dropdown = new Select(element);
+        return dropdown.getFirstSelectedOption().getText();
+    }
+
+    protected void waitAndSelect(By locator, String value){
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        WebElement element=driver.findElement(locator);
+        Select dropdown = new Select(element);
+        webDriverWait.until(ExpectedConditions.elementToBeClickable(element));
+        dropdown.selectByVisibleText(value);
     }
 
 
