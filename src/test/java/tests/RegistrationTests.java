@@ -9,7 +9,7 @@ import pages.RegistrationPage;
 public class RegistrationTests extends BaseTest {
 
     @Test
-    public void testError(){
+    public void testDobError(){
         RegistrationPage registrationPage = new RegistrationPage(DriverManager.getDriver());
         registrationPage.navigateByUrl();
         registrationPage.enterFirstName("Itachi");
