@@ -9,6 +9,12 @@ Install Git : https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 git clone git@github.com:Raneesh02/SampleMavenTestNG.git
 ```
 
+## Java Installation
+
+```
+https://www.oracle.com/in/java/technologies/downloads/#jdk22-windows
+```
+
 
 ## Use Intellij or Eclipse ?
 
