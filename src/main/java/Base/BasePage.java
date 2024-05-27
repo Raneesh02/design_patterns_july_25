@@ -47,10 +47,21 @@ public class BasePage {
         return driver.findElement(locator);
     }
 
+    protected void waitForInVisible(By locator){
+        webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
+    }
+
     protected String getText(By locator){
         waitForVisible(locator);
         return driver.findElement(locator).getText();
     }
+
+    protected String getValue(By locator){
+        waitForVisible(locator);
+        return driver.findElement(locator).getAttribute("value");
+    }
+
+
 
     protected String getSelectedOption(By locator){
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(locator));

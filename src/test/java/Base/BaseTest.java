@@ -11,7 +11,6 @@ public class BaseTest {
     @BeforeMethod
     public void init(){
         DriverManager.initDriver();
-        DriverManager.getDriver();
         url = PropertyHandler.getProperty("url");
         DriverManager.getDriver().get(url);
     }

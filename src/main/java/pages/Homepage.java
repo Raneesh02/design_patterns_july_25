@@ -68,6 +68,13 @@ public class Homepage extends BasePage {
         return elements.stream().map(e -> e.getText()).collect(Collectors.toList());
     }
 
+    public ProductDetailPage selectProduct(int i){
+        waitForVisible(productNameCss);
+        List<WebElement> elements = driver.findElements(productNameCss);
+        elements.get(i-1).click();
+        return new ProductDetailPage(driver);
+    }
+
     public boolean noResultsPresent(){
         return isDisplayed(noResultsCss);
     }
