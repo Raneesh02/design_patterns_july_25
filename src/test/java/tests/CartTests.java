@@ -24,7 +24,7 @@ public class CartTests extends BaseTest {
         CartPage cartPage = productDetailPage.goToCart();
         Assert.assertTrue(cartPage.isProceedPresent());
         Assert.assertEquals(cartPage.getProductName().trim(), productName.trim());
-        Assert.assertEquals(cartPage.getProductQty(), 2);
+        Assert.assertEquals(Integer.parseInt(cartPage.getProductQty()), 2);
     }
 
     @Test

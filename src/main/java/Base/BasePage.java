@@ -8,7 +8,7 @@ import utilities.PropertyHandler;
 
 import java.time.Duration;
 
-public class BasePage {
+public abstract class BasePage {
     protected String url;
     protected WebDriver driver;
     WebDriverWait webDriverWait;
