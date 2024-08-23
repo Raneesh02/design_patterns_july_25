@@ -22,7 +22,9 @@ Directly import the project as a maven project
 
 ## Download Maven
 
-Download Maven https://maven.apache.org/download.cgi
+Download Maven https://maven.apache.org/download.cgi and follow the install instructions to add bin to PATH : https://maven.apache.org/install.html 
+
+Go the project directory containing POM.xml
 
 ```sh
 mvn compile
