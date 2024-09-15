@@ -6,7 +6,7 @@ This project is using Selenium4 Maven TestNG Java
 Install Git : https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
 ```sh
-git clone git@github.com:Raneesh02/Selenium4_POM_Basic.git
+git clone https://github.com/Raneesh02/Selenium4_POM_Basic.git
 ```
 
 ## Java Installation
@@ -20,12 +20,16 @@ https://www.oracle.com/in/java/technologies/downloads/#jdk22-windows
 
 Directly import the project as a maven project
 
+## Setup Project SDK
+Intellij requires you to set/ choose project SDK , follow this link for the same
+
+https://intellij-support.jetbrains.com/hc/en-us/community/posts/360010215699-Set-up-a-project-SDK
+
 ## Download Maven
 
-Download Maven https://maven.apache.org/download.cgi and follow the install instructions to add bin to PATH : https://maven.apache.org/install.html 
+Download Maven https://maven.apache.org/download.cgi
 
-Go the project directory containing POM.xml
-
+Open a command line/ Terminal in project folder
 ```sh
 mvn compile
 ```
