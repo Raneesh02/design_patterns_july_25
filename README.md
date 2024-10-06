@@ -42,5 +42,5 @@ If above command is successful then we are good to go
 mvn clean test
 ```
 
-all the tests with @Test will run
+all the tests mentioned in pom.xml with tag: suiteXmlFile will run
 
