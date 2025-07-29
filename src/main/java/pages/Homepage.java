@@ -15,7 +15,7 @@ public class Homepage extends BasePage {
     By categoriesMenuOptCss=By.cssSelector("[data-test='nav-categories']");
     By contactMenuOptCss=By.cssSelector("[data-test='nav-contact']");
     By signInMenuOptCss=By.cssSelector("[data-test='nav-sign-in']");
-    By languageMenuOptCss=By.cssSelector("[data-test='language']");
+    By languageMenuOptCss=By.cssSelector("[data-test='language-select']");
 
     By categoriesDdnOtpCss=By.cssSelector("[class*='dropdown-menu'][aria-label='nav-categories'] li");
     By brandLogoCss=By.cssSelector("[class='navbar-brand']");
