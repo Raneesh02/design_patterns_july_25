@@ -6,13 +6,13 @@ This project is using Selenium4 Maven TestNG Java
 Install Git : https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
 ```sh
-git clone https://github.com/Raneesh02/Selenium4_POM_Basic.git
+git clone https://github.com/Raneesh02/design_patterns_july_25.git
 ```
 
 ## Java Installation
 
 ```
-https://www.oracle.com/in/java/technologies/downloads/#jdk22-windows
+https://www.oracle.com/java/technologies/javase/jdk22-archive-downloads.html
 ```
 
 

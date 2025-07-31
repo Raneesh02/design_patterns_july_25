@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.example</groupId>
-  <artifactId>Selenium4_POM_Basic</artifactId>
+  <artifactId>DesignPatternsJul25</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>Selenium4_POM_Basic</name>
+  <name>DesignPatternsJul25</name>
   <url>http://maven.apache.org</url>
 
   <properties>
