@@ -10,6 +10,7 @@ public class ProductDetailPage extends BasePage {
     By addToCartBtnId=By.id("btn-add-to-cart");
     By cartBtnCss=By.cssSelector("[data-test='nav-cart']");
     By productNameCss=By.cssSelector("[data-test='product-name']");
+    By alertToastCss= By.cssSelector("div[role*='alert']");
 
     public ProductDetailPage(WebDriver driver) {
         super(driver);
@@ -23,6 +24,8 @@ public class ProductDetailPage extends BasePage {
 
     public void addToCart(){
         waitAndClick(addToCartBtnId);
+        waitForVisible(alertToastCss);
+        waitForInVisible(alertToastCss);
     }
 
     public CartPage goToCart(){
