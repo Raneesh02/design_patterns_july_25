@@ -1,9 +1,16 @@
 package tests;
 
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import utilities.DBUtil;
 
 public class DBUtilTests {
+
+    // Common Before Class
+//    @BeforeClass
+//    public void initDBUtil(){
+//        DBUtil dbUtil= new DBUtil();
+//    }
 
     @Test
     public void test1(){

@@ -5,6 +5,7 @@ import Base.DriverManager;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.RegistrationPage;
+import utilities.DBUtilSingleton;
 
 public class RegistrationTests extends BaseTest {
 
@@ -36,5 +37,10 @@ public class RegistrationTests extends BaseTest {
         Assert.assertEquals(registrationPage.getPhoneError(),"Only numbers are allowed.");
         registrationPage.enterPhone("7489549876");
         Assert.assertFalse(registrationPage.isPhoneErrorPresent(),"Phone error should be resolved");
+    }
+
+    @Test
+    public void testDBConfig(){
+        DBUtilSingleton.printConfig();
     }
 }
