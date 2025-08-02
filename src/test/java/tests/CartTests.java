@@ -2,6 +2,7 @@ package tests;
 
 import Base.BaseTest;
 import Base.DriverManager;
+import facades.AddToCartFacade;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CartPage;
@@ -41,5 +42,17 @@ public class CartTests extends BaseTest {
         Assert.assertEquals(cartPage.getProductQty(), "10");
 
     }
+
+    @Test
+    public void testCategoryPlier() {
+        AddToCartFacade addToCartFacade = new AddToCartFacade();
+        CartPage cartPage = addToCartFacade.addProductToCart("Plier",10);
+        Assert.assertTrue(cartPage.getProductName().contains( "Plier"));
+        Assert.assertEquals(cartPage.getProductQty(), "10");
+
+    }
+
+
+
 
 }
