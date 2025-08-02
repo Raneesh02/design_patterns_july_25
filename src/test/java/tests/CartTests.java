@@ -2,6 +2,7 @@ package tests;
 
 import Base.BaseTest;
 import Base.DriverManager;
+import facades.AddToCartFacade;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CartPage;
@@ -44,18 +45,14 @@ public class CartTests extends BaseTest {
 
     @Test
     public void testCategoryPlier() {
-        Homepage homepage = new Homepage(DriverManager.getDriver());
-        homepage.getFilterBar().selectFilterCategory("Pliers");
-
-        ProductDetailPage productDetailPage = homepage.selectProduct(1);
-        productDetailPage.increaseProductQty(10);
-        productDetailPage.addToCart();
-        productDetailPage.goToCart();
-
-        CartPage cartPage = new CartPage(DriverManager.getDriver());
+        AddToCartFacade addToCartFacade = new AddToCartFacade();
+        CartPage cartPage = addToCartFacade.addProductToCart("Plier",10);
         Assert.assertTrue(cartPage.getProductName().contains( "Plier"));
         Assert.assertEquals(cartPage.getProductQty(), "10");
 
     }
+
+
+
 
 }
