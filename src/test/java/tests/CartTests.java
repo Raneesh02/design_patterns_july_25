@@ -42,4 +42,20 @@ public class CartTests extends BaseTest {
 
     }
 
+    @Test
+    public void testCategoryPlier() {
+        Homepage homepage = new Homepage(DriverManager.getDriver());
+        homepage.getFilterBar().selectFilterCategory("Pliers");
+
+        ProductDetailPage productDetailPage = homepage.selectProduct(1);
+        productDetailPage.increaseProductQty(10);
+        productDetailPage.addToCart();
+        productDetailPage.goToCart();
+
+        CartPage cartPage = new CartPage(DriverManager.getDriver());
+        Assert.assertTrue(cartPage.getProductName().contains( "Plier"));
+        Assert.assertEquals(cartPage.getProductQty(), "10");
+
+    }
+
 }
