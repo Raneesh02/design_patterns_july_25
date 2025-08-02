@@ -3,7 +3,7 @@
 <suite name="Suite1" verbose="1">
     <test name="AllTest" parallel="methods" thread-count="5">
         <classes>
-                <class name="tests.HomePageTests"></class>
+                <class name="tests.DBUtilTests"></class>
         </classes>
     </test>
 </suite>
