@@ -17,8 +17,8 @@ public class DBUtilSingleton {
     }
 
     public static DBUtilSingleton getInstance(){
-        if(dbUtilSingleton==null) {
-            dbUtilSingleton = new DBUtilSingleton();
+        if(dbUtilSingleton==null) { //Thread 1 //Thread2
+            dbUtilSingleton = new DBUtilSingleton(); //Thread 1
         }
         return dbUtilSingleton;
     }
