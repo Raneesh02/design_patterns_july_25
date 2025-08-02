@@ -4,6 +4,7 @@ import Base.BaseTest;
 import Base.DriverManager;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.RegistrationFluentPage;
 import pages.RegistrationPage;
 
 public class RegistrationTests extends BaseTest {
@@ -17,6 +18,19 @@ public class RegistrationTests extends BaseTest {
         registrationPage.submitForm();
         Assert.assertTrue(registrationPage.isDobErrorDisplayed(),"Dob error is not displayed");
     }
+
+    @Test
+    public void testDobErrorFluent(){
+        RegistrationFluentPage registrationFluentPage = new RegistrationFluentPage(DriverManager.getDriver());
+        registrationFluentPage.navigateByUrl().enterFirstName("Itachi").enterLastName("Uchiha").submitForm();
+        Assert.assertTrue(registrationFluentPage.isDobErrorDisplayed(),"Dob error is not displayed");
+    }
+
+    //1. fillFormMethod
+    //2. Method Chaining
+    //3. Common test setup
+    //4. Builder Design Pattern  ==> will discuss on Day 2
+
 
     @Test
     public void testCountryDropdown(){
