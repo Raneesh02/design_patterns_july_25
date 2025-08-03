@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import pages.CartPage;
 import pages.FilterSideBar;
 import pages.Homepage;
-import pages.ProductDetailPage;
+import testdata.Product;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -29,30 +29,43 @@ public class CartTests extends BaseTest {
 
     @Test
     public void testCategory() {
-        Homepage homepage = new Homepage(DriverManager.getDriver());
-        homepage.getFilterBar().selectFilterCategory("Hammer");
 
-        ProductDetailPage productDetailPage = homepage.selectProduct(1);
-        productDetailPage.increaseProductQty(10);
-        productDetailPage.addToCart();
-        productDetailPage.goToCart();
+        //1. Create the plier data
+        //a utility to create the test data
+        Product.ProductBuilder productBuilder = new Product.ProductBuilder();
+        Product product = productBuilder.setName("Hammer").setQty(2).build();
 
-        CartPage cartPage = new CartPage(DriverManager.getDriver());
-        Assert.assertTrue(cartPage.getProductName().contains( "Hammer"));
-        Assert.assertEquals(cartPage.getProductQty(), "10");
+
+        //2. validating
+        AddToCartFacade addToCartFacade = new AddToCartFacade();
+        CartPage cartPage = addToCartFacade.addProductToCart(product.getName(),product.getQty());
+        Assert.assertTrue(cartPage.getProductName().contains( product.getName()));
+        Assert.assertEquals(cartPage.getProductQty(), String.valueOf(product.getQty()));
+
 
     }
 
     @Test
     public void testCategoryPlier() {
+        //1. Create the plier data
+        //a utility to create the test data
+        Product.ProductBuilder productBuilder = new Product.ProductBuilder();
+        Product product = productBuilder.setName("Plier").setQty(10).setPrice(1200).build();
+
+        //2. validating
         AddToCartFacade addToCartFacade = new AddToCartFacade();
-        CartPage cartPage = addToCartFacade.addProductToCart("Plier",10);
-        Assert.assertTrue(cartPage.getProductName().contains( "Plier"));
-        Assert.assertEquals(cartPage.getProductQty(), "10");
+        CartPage cartPage = addToCartFacade.addProductToCart(product.getName(),product.getQty());
+        Assert.assertTrue(cartPage.getProductName().contains( product.getName()));
+        Assert.assertEquals(cartPage.getProductQty(), String.valueOf(product.getQty()));
 
     }
 
+    // If the test data is already present in application
+    //1. separate file to keep the data
+    //2. variables in same file
+    //3. Dataprovider - class and with file
+    //4. Cucumber feature file
 
-
+    //What about if you have to create it
 
 }
