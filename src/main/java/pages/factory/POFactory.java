@@ -1,20 +1,22 @@
 package pages.factory;
 
 import org.openqa.selenium.WebDriver;
-import pages.WebHomePage;
+import pages.CartPage;
 import pages.interfaces.HomePage;
-import pages.mweb.MWebHomePage;
 import utilities.PropertyHandler;
 
-public class POFactory {
-    public HomePage getHomepage(WebDriver driver){
+public abstract class POFactory {
 
+    public static POFactory getFactory(){
         if(PropertyHandler.platform.equalsIgnoreCase("mweb")) {
-            return new MWebHomePage(driver);
+            return new MWebPageFactory();
         }
         else{
-            return new WebHomePage(driver);
+            return new WebPageFactory();
         }
     }
+
+    public abstract HomePage getHomepage(WebDriver driver);
+
 
 }

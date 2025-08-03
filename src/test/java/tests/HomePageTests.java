@@ -15,7 +15,7 @@ public class HomePageTests extends BaseTest {
 
     @Test
     public void testCategories(){
-        POFactory poFactory = new POFactory();
+        POFactory poFactory = POFactory.getFactory();
         HomePage homepage = poFactory.getHomepage(DriverManager.getDriver());
         homepage.openCategories();
         Assert.assertEquals(homepage.getCategoriesList(), Arrays.asList("Hand Tools", "Power Tools", "Other", "Special Tools","","Rentals"));
