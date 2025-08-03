@@ -8,6 +8,8 @@ import utilities.PropertyHandler;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 public class DriverManager {
 
@@ -34,6 +36,14 @@ public class DriverManager {
 //        chromeOptions.addArguments("--no-sandbox");
 //        chromeOptions.addArguments("--disable-dev-shm-usage");
 //        chromeOptions.addArguments("--headless");
+
+        if(PropertyHandler.platform.equalsIgnoreCase("mweb")) {
+            Map<String, String> mobileEmulation = new HashMap<>();
+            mobileEmulation.put("deviceName", "iPhone X");
+
+            chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
+        }
+
         return chromeOptions;
     }
 
