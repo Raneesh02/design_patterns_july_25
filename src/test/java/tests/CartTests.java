@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CartPage;
 import pages.FilterSideBar;
-import pages.Homepage;
+import pages.WebHomePage;
 import pages.ProductDetailPage;
 
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ public class CartTests extends BaseTest {
 
     @Test
     public void testSortNames(){
-        Homepage homepage = new Homepage(DriverManager.getDriver());
+        WebHomePage homepage = new WebHomePage(DriverManager.getDriver());
         FilterSideBar filterBar = homepage.getFilterBar();
         filterBar.sortBy("Name (A - Z)");
         List<String> productNameList = homepage.getProductNameList();
@@ -28,7 +28,7 @@ public class CartTests extends BaseTest {
 
     @Test
     public void testCategory() {
-        Homepage homepage = new Homepage(DriverManager.getDriver());
+        WebHomePage homepage = new WebHomePage(DriverManager.getDriver());
         homepage.getFilterBar().selectFilterCategory("Hammer");
 
         ProductDetailPage productDetailPage = homepage.selectProduct(1);
